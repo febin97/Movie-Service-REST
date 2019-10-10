@@ -1,5 +1,6 @@
 package com.stackroute.exception;
 
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -25,6 +26,14 @@ public class ExceptionHandlerControllerAdvice {
         ExceptionResponse error = new ExceptionResponse();
         error.setErrorMessage(e.getMessage());
         error.setRequestedUri(req.getRequestURI());
+        return error;
+    }
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public @ResponseBody ExceptionResponse SQLErrorHandler(Exception e,HttpServletRequest req){
+        ExceptionResponse error = new ExceptionResponse();
+        error.setErrorMessage("Internal Server Error Handled");
+        error.setRequestedUri("");
         return error;
     }
 }

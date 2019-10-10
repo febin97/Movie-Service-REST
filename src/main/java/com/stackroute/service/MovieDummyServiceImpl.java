@@ -1,8 +1,6 @@
 package com.stackroute.service;
 
 import com.stackroute.domain.Movie;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 

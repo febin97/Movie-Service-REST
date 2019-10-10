@@ -3,14 +3,13 @@ package com.stackroute.controller;
 import com.stackroute.domain.Movie;
 import com.stackroute.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.AccessDeniedException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/movies")
+@RequestMapping("/api/v1/movies")
 public class MovieController {
     @Autowired
     private  MovieService movieService;
@@ -38,5 +37,4 @@ public class MovieController {
     public void deleteMovie(@PathVariable int id){
         movieService.DeleteMovie(id);
     }
-
 }

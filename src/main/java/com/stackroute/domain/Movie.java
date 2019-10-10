@@ -1,12 +1,16 @@
 package com.stackroute.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Movie {
 
     private @Id Integer movieId;
@@ -20,21 +24,4 @@ public class Movie {
     private String movieReleaseDate;
     private String movieOverview;
     private String movieTagLine;
-
-    public Movie() {
-    }
-
-    public Movie(int movieId, String imdbId, int movieBudget, String movieLanguage, String movieTitle, String moviePosterPath, int movieRevenue, int movieRunTime, String movieReleaseDate, String movieOverview, String movieTagLine) {
-        this.movieId = movieId;
-        this.imdbId = imdbId;
-        this.movieBudget = movieBudget;
-        this.movieLanguage = movieLanguage;
-        this.movieTitle = movieTitle;
-        this.moviePosterPath = moviePosterPath;
-        this.movieRevenue = movieRevenue;
-        this.movieRunTime = movieRunTime;
-        this.movieReleaseDate = movieReleaseDate;
-        this.movieOverview = movieOverview;
-        this.movieTagLine = movieTagLine;
-    }
 }
